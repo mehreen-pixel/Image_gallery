@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Image Gallery</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+  <div class="container mx-auto py-10">
+    <h1 class="text-3xl font-bold text-center mb-8"> Image Gallery</h1>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 px-4">
+      <!-- Image Thumbnails -->
+      <div class="cursor-pointer" data-index="0">
+        <img src="https://picsum.photos/id/1011/300/200" alt="Forest" class="rounded shadow hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="cursor-pointer" data-index="1">
+        <img src="https://picsum.photos/id/1015/300/200" alt="Mountains" class="rounded shadow hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="cursor-pointer" data-index="2">
+        <img src="https://picsum.photos/id/1024/300/200" alt="Dog" class="rounded shadow hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="cursor-pointer" data-index="3">
+        <img src="https://picsum.photos/id/1027/300/200" alt="Bridge" class="rounded shadow hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="cursor-pointer" data-index="4">
+        <img src="https://picsum.photos/id/1035/300/200" alt="Waterfall" class="rounded shadow hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="cursor-pointer" data-index="5">
+        <img src="https://picsum.photos/id/1042/300/200" alt="Sunset" class="rounded shadow hover:scale-105 transition-transform duration-300" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50 transition-opacity duration-300">
+    <div class="relative max-w-3xl w-full mx-4">
+      <button id="closeBtn" class="absolute top-2 right-2 text-white text-3xl font-bold">&times;</button>
+      <img id="modalImage" src="" alt="" class="w-full rounded" />
+      <p id="caption" class="text-white text-center mt-4"></p>
+
+      <!-- Navigation Buttons -->
+      <button id="prevBtn" class="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-gray-800 bg-opacity-50 px-2 py-1 rounded hover:bg-opacity-75">&larr;</button>
+      <button id="nextBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-gray-800 bg-opacity-50 px-2 py-1 rounded hover:bg-opacity-75">&rarr;</button>
+    </div>
+  </div>
+<script  src="script.js"></script>
+</body>
+</html>
